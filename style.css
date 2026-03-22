@@ -1,0 +1,191 @@
+body{
+margin:0;
+background:black;
+color:white;
+text-align:center;
+font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;
+overflow-x:hidden;
+}
+
+/* glow overlay */
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle, rgba(255,105,180,0.15), transparent 70%);
+pointer-events:none;
+}
+
+.center{
+margin-top:60px;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#ff1a66;
+}
+
+.hidden{display:none;}
+
+/* MEMORY CARD */
+.memoryCard{
+background:rgba(20,20,20,0.8);
+padding:20px;
+border-radius:20px;
+max-width:350px;
+margin:auto;
+animation:fadeUp 1s;
+box-shadow:0 0 25px rgba(255,64,129,0.5);
+}
+
+#memoryImage{
+width:100%;
+max-width:260px;
+border-radius:15px;
+margin-top:10px;
+transition:1s ease-in-out;
+}
+
+/* DIFFERENT EFFECTS */
+
+.zoomIn{
+animation:zoomIn 5s ease-in-out;
+}
+
+.zoomOut{
+animation:zoomOut 5s ease-in-out;
+}
+
+.panLeft{
+animation:panLeft 5s ease-in-out;
+}
+
+.panRight{
+animation:panRight 5s ease-in-out;
+}
+
+/* ANIMATIONS */
+
+@keyframes zoomIn{
+0%{transform:scale(1);}
+100%{transform:scale(1.2);}
+}
+
+@keyframes zoomOut{
+0%{transform:scale(1.3);}
+100%{transform:scale(1);}
+}
+
+@keyframes panLeft{
+0%{transform:scale(1.2) translateX(20px);}
+100%{transform:scale(1.2) translateX(-20px);}
+}
+
+@keyframes panRight{
+0%{transform:scale(1.2) translateX(-20px);}
+100%{transform:scale(1.2) translateX(20px);}
+}
+.zoom{transform:scale(1.08);}
+
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+#yearText{
+color:#ff4da6;
+}
+
+/* VIDEO */
+.videoContainer{
+display:flex;
+justify-content:center;
+}
+
+#birthdayVideo{
+width:90%;
+max-width:600px;
+border-radius:15px;
+}
+
+/* HEARTS */
+.heart{
+position:fixed;
+bottom:-50px;
+animation:floatHeart 6s linear infinite;
+}
+
+@keyframes floatHeart{
+0%{transform:translateY(0); opacity:1;}
+100%{transform:translateY(-100vh); opacity:0;}
+}
+
+/* CAKE */
+.cakeArea{position:relative;height:200px;}
+
+#cakeEmoji{font-size:120px;}
+
+#knifeEmoji{
+position:absolute;
+bottom:0;
+left:10px;
+font-size:70px;
+cursor:grab;
+}
+
+/* FINAL */
+.glow{
+animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #ff4da6;}
+to{text-shadow:0 0 30px #ff99cc;}
+}
+
+.finalText{margin-top:20px;font-size:18px;}
+
+/* GIFT */
+#giftPage{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+#giftBox{
+font-size:120px;
+cursor:pointer;
+transition:0.5s;
+}
+
+#giftBox:hover{transform:scale(1.2);}
+
+.openGift{
+animation:giftOpen 0.8s forwards;
+}
+
+@keyframes giftOpen{
+0%{transform:scale(1)}
+50%{transform:scale(1.3)}
+100%{transform:scale(0)}
+}
+
+#knifeEmoji{
+touch-action:none;
+}
